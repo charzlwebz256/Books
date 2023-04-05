@@ -22,8 +22,12 @@ root.render(
 reportWebVitals();
 */
 const App=()=>{
+  const onSearchNameChangeHandler=(event)=>{
+    console.log("Value of search is :", event.target.value);
+  }
   return(
     <>
+    <input onChange={onSearchNameChangeHandler} placeholder='Search a book'/>
       <Header/>
       <Body/>
       <Footer/>
@@ -40,13 +44,26 @@ const Header=()=>{
         <ul class="submenu">
 <li><a href="">Web design</a></li>
 <li><a href="">Graphics design</a></li>
-<li><a href="">App development</a></li>
-<li><a href="">Marketing</a></li>
 </ul>
 </li>
-<li><a href="">Blog</a></li>
-<li><a href="">About us</a></li>
-<li><a href="">Contact us</a></li>
+<li><a href="">Blog</a>
+<ul class="submenu">
+<li><a href="">News</a></li>
+<li><a href="">What we do</a></li>
+</ul>
+</li>
+<li><a href="">About us</a>
+<ul class="submenu">
+<li><a href="">Location</a></li>
+<li><a href="">Background</a></li>
+</ul>
+</li>
+<li><a href="">Contact us</a>
+<ul class="submenu">
+<li><a href="">Offline</a></li>
+<li><a href="">Online</a></li>
+</ul>
+</li>
 </ul>
     </div>
   )
@@ -84,10 +101,15 @@ const Books=()=>{
     )
   }
   const Book2=()=>{
+    const greet=()=>{
+      console.log('All these books were authoured by Ben Carson');
+    }
     return(
       <div id='book'>
         <img src='https://th.bing.com/th/id/R.ff9ac0565ef1a4c18938fead19910f90?rik=Lu1YlOa0dBb5Vg&pid=ImgRaw&r=0'/>
         <h3>One Nation</h3>
+        <button onClick={greet}>I can only be consologged</button>
+
       </div>
     )
   }
@@ -100,10 +122,15 @@ const Books=()=>{
     )
   }
   const Book4=()=>{
+    const greet=()=>{
+      alert('All these books were authoured by Ben Carson');
+    }
     return(
       <div id='book'>
         <img src='https://globalbookclub.s3.amazonaws.com/resources/2980599/gifted_hands_revised_kids_edition_the_ben_carson_story/cover.jpg'/>
         <h3>Gifted Hands</h3>
+        <button onClick={greet}>Click me</button>
+
       </div>
     )
   }
@@ -133,6 +160,7 @@ const Books=()=>{
   }
   
   const Book8=()=>{
+    
     return(
       <div id='book'>
         <img src='https://s1.nyt.com/du/books/images/9780310330714.jpg'/>
@@ -140,6 +168,8 @@ const Books=()=>{
       </div>
     )
   }
+  
+
 
   const Footer=()=>{
     return(
