@@ -168,7 +168,17 @@ const Books=()=>{
       </div>
     )
   }
-  
+  // Preparing Rice
+  let rice = true;
+  let water = false;
+  let energy = true;
+  let salt = true;
+  if(rice===true){
+    console.log("Rice is available");
+  }
+  else{
+    console.log("Please select some Rice");
+  }
 
 
   const Footer=()=>{
